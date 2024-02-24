@@ -1,6 +1,4 @@
 import json
-
-# http://api.weatherapi.com/v1/current.json?key=&q=India&aqi=no
 from datetime import datetime
 import requests  
 import boto3
@@ -25,7 +23,7 @@ def lambda_handler(event, context):
               "Atlanta": 4180439, "Tampa": 4174757, "Memphis": 4641239, "Tempe": 5317058, "Edmond": 4535961}
     
     for city, city_id in cities.items():
-        data = get_weather_data(city_id, "505a12d16d43c9ee02ae17fbe678a606")
+        data = get_weather_data(city_id, "Put the API key")
         
         # Check if the data contains the expected keys
         if 'main' in data and 'temp' in data['main']:
